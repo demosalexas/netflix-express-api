@@ -1,8 +1,8 @@
 import { Repository } from "typeorm";
 
-import { CRUD } from "../interfaces";
-import { List } from "../entities";
-import { AppDataSource } from "../../configs/database/data-source";
+import { CRUD } from "@interfaces";
+import { List } from "@entities";
+import { AppDataSource } from "@data-source";
 
 class ListService implements CRUD {
   listRepository: Repository<List>;

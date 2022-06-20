@@ -1,4 +1,4 @@
-import { BadRequestException } from "./index";
+import { BadRequestException } from "@exceptions";
 
 class ValidationException extends BadRequestException {
   details?: string[];

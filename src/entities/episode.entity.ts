@@ -1,5 +1,5 @@
 import { Entity, PrimaryGeneratedColumn, Column, ManyToOne } from "typeorm";
-import Season from "./season.entity";
+import { Season } from "@entities";
 
 @Entity("episodes")
 class Episode {

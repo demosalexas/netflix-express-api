@@ -1,8 +1,8 @@
 import { Repository } from "typeorm";
 
-import { Profile } from "../entities";
-import { AppDataSource } from "../../configs/database/data-source";
-import { CRUD } from "../interfaces";
+import { Profile } from "@entities";
+import { AppDataSource } from "@data-source";
+import { CRUD } from "@interfaces";
 
 class ProfileService implements CRUD {
   profileRepository: Repository<Profile>;

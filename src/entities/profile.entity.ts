@@ -1,5 +1,5 @@
 import { Entity, PrimaryGeneratedColumn, Column, ManyToOne } from "typeorm";
-import { Show, User } from "./index";
+import { User } from "@entities";
 
 @Entity("profiles")
 class Profile {

@@ -1,7 +1,7 @@
 import { Request, Response } from "express";
 
-import { AuthService, UserService } from "../services";
-import { CreateUserSchema } from "../schemas/user.schema";
+import { AuthService, UserService } from "@services";
+import { CreateUserSchema } from "@schemas";
 
 const userService = new UserService();
 
@@ -20,8 +20,6 @@ class UserController {
   public static async findMe (request: Request, response: Response) {
 
   };
-
-
 };
 
 export default UserController;

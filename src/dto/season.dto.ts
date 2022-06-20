@@ -1,6 +1,6 @@
 import { Episode, Show } from "../entities";
 
-interface CreateSeasonDto {
+interface CreateSeasonDTO {
   id: string;
   show: Show;
   title: string;
@@ -11,5 +11,5 @@ interface CreateSeasonDto {
 };
 
 export {
-  CreateSeasonDto
+  CreateSeasonDTO
 };

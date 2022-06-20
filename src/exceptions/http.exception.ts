@@ -1,4 +1,4 @@
-import { HTTP_STATUS } from "../enums";
+import { HTTP_STATUS } from "@enums";
 
 abstract class HttpException extends Error {
   message: string;

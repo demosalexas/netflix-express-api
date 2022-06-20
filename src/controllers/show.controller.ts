@@ -1,6 +1,6 @@
 import { Request, Response } from "express";
 
-import { ShowService } from "../services";
+import { ShowService } from "@services";
 
 const showService = new ShowService();
 

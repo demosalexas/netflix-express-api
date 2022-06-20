@@ -1,11 +1,11 @@
 import { Repository } from "typeorm";
 import bcrypt from "bcrypt";
 
-import { User } from "../entities";
-import { AppDataSource } from "../../configs/database/data-source";
-import { CreateUserDTO } from "../dto";
-import { CRUD } from "../interfaces";
-import { ProfileService } from "./index";
+import { User } from "@entities";
+import { AppDataSource } from "@data-source";
+import { CreateUserDTO } from "@dto";
+import { CRUD } from "@interfaces";
+import { ProfileService } from "@services";
 
 class UserService implements CRUD {
   userRepository: Repository<User>;

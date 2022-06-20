@@ -1,8 +1,9 @@
-import { CRUD } from "../interfaces";
 import { Repository } from "typeorm";
-import { Season } from "../entities";
-import { AppDataSource } from "../../configs/database/data-source";
-import { CreateSeasonDto } from "../dto/season.dto";
+
+import { CRUD } from "@interfaces";
+import { Season } from "@entities";
+import { AppDataSource } from "@data-source";
+import { CreateSeasonDTO } from "@dto";
 
 class SeasonService implements CRUD {
   private seasonRepository: Repository<Season>;
@@ -11,7 +12,7 @@ class SeasonService implements CRUD {
     this.seasonRepository = AppDataSource.getRepository(Season);
   };
 
-  async create (resource: CreateSeasonDto): Promise<any> {
+  async create (resource: CreateSeasonDTO): Promise<any> {
     return this.seasonRepository.find();
   };
 

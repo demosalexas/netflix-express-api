@@ -2,10 +2,20 @@ import { Request, Response } from "express";
 
 import { AuthService } from "../services";
 
-class AuthController {
-  public static async findAll (request: Request, response: Response) {
+const authService = new AuthService();
 
-    response.send("shows");
+class AuthController {
+  public static async login (request: Request, response: Response) {
+    const { body: { email, password } } = request;
+    try {
+      const authenticatedUser = await authService.login(email, password);
+
+      response.send(authenticatedUser);
+    } catch (e) {
+      console.log(`Erro ao logar usuário! Dados: ${JSON.stringify({ email })}`);
+
+      //response.errorHandler && response.errorHandler(e)
+    }
   };
 };
 

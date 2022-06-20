@@ -10,13 +10,13 @@ import SeasonRouter from "./season.router";
 import ProfileRouter from "./profile.router";
 
 const routes: Router[] = [
-  // AuthRouter,
-  UserRouter
-  // ProfileRouter,
-  // ListRouter,
-  // ShowRouter,
-  // SeasonRouter,
-  // EpisodeRouter
+  AuthRouter,
+  UserRouter,
+  ProfileRouter,
+  ListRouter,
+  ShowRouter,
+  SeasonRouter,
+  EpisodeRouter
 ];
 
 const jsonParserMiddleware = express.json();

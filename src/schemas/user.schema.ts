@@ -5,6 +5,9 @@ const CreateUserSchema = Joi.object({
   password: Joi.string().required()
 });
 
+const LoginUserSchema = CreateUserSchema;
+
 export {
-  CreateUserSchema
+  CreateUserSchema,
+  LoginUserSchema
 };

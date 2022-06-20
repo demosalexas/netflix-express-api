@@ -2,37 +2,35 @@ import { Repository } from "typeorm";
 
 import { AppDataSource } from "../../configs/database/data-source";
 import { Show } from "../entities";
+import { CreateShowDTO } from "../dto";
+import { CRUD } from "../interfaces";
 
-interface CreateShowDTO {
-  title: string;
-};
-
-class MovieService {
-  private movieRepository: Repository<Show>;
+class ShowService implements CRUD {
+  private showRepository: Repository<Show>;
 
   constructor () {
-    this.movieRepository = AppDataSource.getRepository(Show);
+    this.showRepository = AppDataSource.getRepository(Show);
   };
 
-  findAll () {
-    return this.movieRepository.find();
+  async create (resource: CreateShowDTO) {
+    return this.showRepository.save({});
   };
 
-  create (show: CreateShowDTO) {
-    return this.movieRepository.save(show);
+  async findAll () {
+    return this.showRepository.find();
   };
 
-  update () {
-
+  async findOne (id: any) {
+    return this.showRepository.find();
   };
 
-  delete () {
-
+  async update (id: any, resource: any) {
+    return this.showRepository.find();
   };
 
-  findOne () {
-
+  async delete (id: any) {
+    return this.showRepository.find();
   };
 };
 
-export default MovieService;
+export default ShowService;

@@ -1,21 +1,31 @@
-class EpisodeService {
-  create () {
+import { Repository } from "typeorm";
+
+import { CRUD } from "../interfaces";
+import { Episode } from "../entities";
+import { AppDataSource } from "../../configs/database/data-source";
+
+class EpisodeService implements CRUD {
+  episodeRepository: Repository<Episode>;
+  constructor () {
+    this.episodeRepository = AppDataSource.getRepository(Episode);
+  }
+  async create (resource: any): Promise<any> {
 
   };
 
-  findAll () {
+  async findAll (): Promise<any> {
 
   };
 
-  findOne () {
+  async findOne (id: any): Promise<any> {
 
   };
 
-  update () {
+  async update (id: any): Promise<any> {
 
   };
 
-  delete () {
+  async delete (id: any): Promise<any> {
 
   };
 };

@@ -5,6 +5,18 @@ import { ShowService } from "../services";
 const showService = new ShowService();
 
 class ShowController {
+  public static async create (request: Request, response: Response) {
+    try {
+      const shows = request.body;
+
+      const result = await showService.create(shows);
+
+      response.send(result);
+    } catch (e) {
+      console.log(e);
+    }
+  };
+
   public static async findAll (request: Request, response: Response) {
     const shows: any = await showService.findAll();
 
@@ -20,23 +32,11 @@ class ShowController {
 
   };
 
-  public static async create (request: Request, response: Response) {
-    try {
-      const shows = request.body;
+  public static async update (request: Request, response: Response) {
 
-      const result = await showService.create(shows);
-
-      response.send(result);
-    } catch (e) {
-      console.log(e);
-    }
   };
 
   public static async delete (request: Request, response: Response) {
-
-  };
-
-  public static async update (request: Request, response: Response) {
 
   };
 };

@@ -1,0 +1,26 @@
+version: "3.8"
+
+services:
+  netflix-db:
+    image: mysql:8.0
+    container_name: netflix_mysql_container
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: netflix
+      MYSQL_DATABASE: dbnetflix
+    ports:
+      - "3306:3306"
+    cap_add:
+      - SYS_NICE
+    expose:
+      - "3306"
+    volumes:
+      - netflix-db:/var/lib/mysql
+  adminer:
+    image: adminer:4
+    restart: always
+    container_name: netflix_adminer_container
+    ports:
+      - 8080:8080
+volumes:
+  netflix-db:

@@ -1,6 +1,6 @@
 import { Router } from "express";
 
-import { EpisodeController } from "../controllers";
+import { EpisodeController } from "@controllers";
 
 const EpisodeRouter: Router = Router();
 

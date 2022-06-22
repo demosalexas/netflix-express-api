@@ -1,5 +1,5 @@
 import { DataSource } from "typeorm";
-import { User, Profile, Show, Genre, Season, Episode, List } from "../../src/entities";
+import { User, Profile, Show, Genre, Season, Episode, List } from "@entities";
 
 export const AppDataSource = new DataSource({
   type: "mysql",

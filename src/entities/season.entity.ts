@@ -1,4 +1,5 @@
 import { Entity, PrimaryGeneratedColumn, Column, ManyToOne, OneToMany } from "typeorm";
+
 import { Show, Episode } from "@entities";
 
 @Entity("seasons")

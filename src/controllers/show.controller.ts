@@ -1,20 +1,22 @@
 import { Request, Response } from "express";
 
 import { ShowService } from "@services";
+import { CustomResponse } from "@interfaces";
+import { HTTP_STATUS } from "@enums";
 
 const showService = new ShowService();
 
 class ShowController {
-  public static async create (request: Request, response: Response) {
+  public static async create (request: Request, response: CustomResponse) {
     try {
-      const shows = request.body;
-
-      const result = await showService.create(shows);
-
-      response.send(result);
-    } catch (e) {
-      console.log(e);
-    }
+      const newShow = request.body;
+      console.log(newShow)
+      const result = await showService.create(newShow);
+      response.status(HTTP_STATUS.CREATED).json(result);
+    } catch (error) {
+      console.log(error)
+      response.errorHandler && response.errorHandler(error);
+    };
   };
 
   public static async findAll (request: Request, response: Response) {

@@ -1,3 +1,7 @@
+import { GenreService } from "@services";
+
+const genreService = new GenreService();
+
 class GenreController {
   public static async create () {
 

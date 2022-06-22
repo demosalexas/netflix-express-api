@@ -13,7 +13,10 @@ class ShowService implements CRUD {
   };
 
   async create (resource: CreateShowDTO) {
-    return this.showRepository.save({});
+    console.log(resource, "service");
+    const createdShow = await this.showRepository.save(resource);
+    console.log(createdShow, "service");
+    return createdShow;
   };
 
   async findAll () {
@@ -21,15 +24,15 @@ class ShowService implements CRUD {
   };
 
   async findOne (id: any) {
-    return this.showRepository.find();
+    return this.showRepository.findOneBy({ id: id });
   };
 
   async update (id: any, resource: any) {
-    return this.showRepository.find();
+    return this.showRepository.update({ id: id }, { title: resource });
   };
 
   async delete (id: any) {
-    return this.showRepository.find();
+    return this.showRepository.delete({ id: id });
   };
 };
 

@@ -6,7 +6,7 @@ class ValidationException extends BadRequestException {
   constructor (message: string, details?: any[]) {
     super(message);
     this.details = details;
-  }
-}
+  };
+};
 
 export default ValidationException;

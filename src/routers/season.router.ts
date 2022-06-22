@@ -1,6 +1,6 @@
 import { Router } from "express";
 
-import { SeasonController } from "../controllers";
+import { SeasonController } from "@controllers";
 
 const SeasonRouter: Router = Router();
 

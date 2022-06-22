@@ -1,3 +1,7 @@
+import { SeasonService } from "@services";
+
+const seasonService = new SeasonService();
+
 class SeasonController {
   public static async findAll () {
 

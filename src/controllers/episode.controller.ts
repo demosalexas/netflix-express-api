@@ -1,3 +1,7 @@
+import { EpisodeService } from "@services";
+
+const espisodeService = new EpisodeService();
+
 class EpisodeController {
   public static async create () {
 

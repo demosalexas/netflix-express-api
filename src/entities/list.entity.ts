@@ -1,4 +1,5 @@
 import { Entity, OneToOne, PrimaryGeneratedColumn, JoinColumn } from "typeorm";
+
 import { Show, Profile } from "@entities";
 
 @Entity("lists")

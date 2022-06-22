@@ -32,11 +32,12 @@ class UserService implements CRUD {
   };
 
   async findAll (): Promise<any> {
-
+    return await this.userRepository.find();
   };
 
   async findOne (id: any): Promise<any> {
-
+    const foundUser = await this.userRepository.findOne({ where: { id } });
+    return foundUser;
   };
 
   async update (id: any, resource: any): Promise<any> {

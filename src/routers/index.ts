@@ -1,6 +1,8 @@
 import express, { Application, Router } from "express";
 import morgan from "morgan";
 
+import { ErrorHandlerMiddleware } from "@middlewares";
+
 import AuthRouter from "./auth.router";
 import ShowRouter from "./show.router";
 import UserRouter from "./user.router";
@@ -24,9 +26,7 @@ const jsonParserMiddleware = express.json();
 function startRoutes (app: Application): void {
   app.use(jsonParserMiddleware);
   app.use(morgan("tiny"));
-
-  // app.use(errorHandlerMiddleware);
-
+  app.use(ErrorHandlerMiddleware);
   app.use(routes);
 };
 

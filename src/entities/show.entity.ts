@@ -1,5 +1,7 @@
 import { Entity, PrimaryGeneratedColumn, Column, OneToMany, ManyToMany, JoinTable } from "typeorm";
+
 import { Season, Genre } from "@entities";
+import { ShowCategoryEnum } from "@enums";
 
 @Entity("shows")
 class Show {
@@ -12,18 +14,18 @@ class Show {
   @Column({ nullable: false })
   overview: string;
 
-  @Column()
+  @Column({ nullable: true })
   poster_url: string;
 
-  @Column()
+  @Column({ nullable: true })
   runtime: number;
 
   @ManyToMany(type => Genre)
   @JoinTable()
   genres: Genre[];
 
-  @Column({ nullable: false })
-  category: string;
+  @Column({ type: "enum", default: ShowCategoryEnum.MOVIE, enum: ShowCategoryEnum })
+  category: ShowCategoryEnum;
 
   @OneToMany(type => Season, season => season.show)
   seasons: Season[];
